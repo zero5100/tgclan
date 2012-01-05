@@ -1,0 +1,118 @@
+{
+  "host": "localhost",
+  "socket.io": {
+    "port": 8081,
+    "host": "localhost"
+  },
+  "auth": {
+    "enabled": false,
+    "userIdPrefix": "org.couchdb.user:"
+  },
+  "ssl": {
+    "enabled": false,
+    "key": "full/path/to/key_file",
+    "cert": "full/path/to/cert_file",
+    "useRedirectServer": true,
+    "redirectServerPort": 80
+  },
+  "daemon": {
+    "runAsDaemon": false,
+    "outputPath": "feather-app.out",
+    "pidPath": "/tmp/feather-app.pid",
+    "runAsUser": "root"
+  },
+  "data": {
+    "datalinking": {
+      "enabled": true
+    }
+  },
+  "domPoolSize": {
+    "min": 10, 
+    "max": 20
+  },
+  "environments": {
+    "dev": {},
+    "test": {}, 
+    "prod": {},
+    "unittest": {
+      "debug": true,
+      "daemon": {
+        "runAsDaemon": false
+      },
+      "data": {
+        "appdb": {
+          "provider": "test"
+        }
+      },
+      "logging": {
+        "enabled": true,
+        "defaultLevel": "trace",
+        "absorbConsoleLogging": true
+      }
+    }
+  },
+  "logging": {
+    "enabled": true,
+    "defaultLevel": "all",
+    "absorbConsoleLogging": true,
+    "appenders": [
+      {
+        "type": "console",
+        "options": { "layout": "colored" }
+      }
+    ],
+    "templates": [
+      {"id":"separator", "template":"-------------------------------------------------------------------------"}
+    ]
+  },
+  "resources": {
+    "publish": {
+      "consolidate": false,
+      "minify": false,
+      "gzip": false,
+      "publisherId": "local",
+      "publishers": [
+        {
+          "id": "local",
+          "config": {
+            "publishLocation": "feather-res-cache"
+          }
+        }
+      ]
+    },
+    "packages": [
+      { 
+        "name":"feather-client-core.js",
+        "consolidate": false,
+        "minify": false,
+        "publisherId": "local"
+      },
+      {
+        "name": "feather-client-core.css",
+        "consolidate": false,
+        "minify": true,
+        "publisherId": "local"
+      }
+    ]
+  },
+  "session": {
+    "config": {
+      "key": "feather.sid",
+      "cookie": { "path": "/", "httpOnly": false, "maxAge": 14400000 },
+      "secret": "feather app key"
+    },
+    "ignorePaths": ["/robots.txt"]
+  },
+  "ui": {
+    "enabled": true,
+    "provider": {
+      "jsFiles": [
+        "/feather-client/lib/jqueryUI-1.8.14/js/jquery-ui-1.8.14.custom.min.js",
+        "/feather-client/ui.js"
+      ],
+      "cssFiles": [
+        "/feather-client/lib/jqueryUI-1.8.14/css/black-tie/jquery-ui-1.8.14.custom.css"
+      ]
+    }
+  }
+}
