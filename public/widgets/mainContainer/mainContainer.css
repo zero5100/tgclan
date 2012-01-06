@@ -1,0 +1,20 @@
+body {
+  background-color: #666;
+
+}
+
+.tgclan_mainContainer .main-body {
+  background-color: #123;
+  margin: auto;
+  width: 768px;
+}
+
+.tgclan_mainContainer .main-body .content {
+  background-color: white;
+  height: 100%;
+}
+
+.tgclan_mainContainer .main-body .footer {
+  height: 25px;
+  background-color: orange;
+}

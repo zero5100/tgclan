@@ -1,0 +1,34 @@
+.tgclan_topMenu {
+  height: 50px;
+  background-color: lightblue;
+}
+
+.tgclan_topMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tgclan_topMenu li {
+  display: inline;
+}
+
+.tgclan_topMenu ul li a {
+  display: block;
+  width: 60px;
+  text-align: center;
+  padding: 15px;
+  background-color: red;
+}
+
+.tgclan_topMenu ul li a:hover {
+  background-color: white;
+}
+
+.tgclan_topMenu .left {
+  float: left;
+}
+
+.tgclan_topMenu .right {
+  float: right;
+}
